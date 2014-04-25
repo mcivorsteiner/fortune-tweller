@@ -110,6 +110,10 @@ nav a {
 PROFILE PAGE
 ***********************************/
 
+.text_input {
+  width: 90%;
+}
+
 .tweet_form {
   padding-top: 2em;
   /*border-top: 1px solid black;*/
@@ -274,13 +278,10 @@ nav a.selected, nav a:hover {
     margin-bottom: 60px;
   }
 
-  /**********************************
-  PAGE: ABOUT
-  ***********************************/
 
-  #mn_poster {
-    float: right;
-    margin: 0 0 0 5%;
+  .text_input {
+    width: 90%;
+    max-width: 300px;
   }
 
 }
