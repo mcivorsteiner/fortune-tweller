@@ -1,10 +1,12 @@
 <div class="container">
 <h3>Tweets from Users you Follow:</h3>
 
-  <% @users.each do |user| %>
-    <%= user.handle %> <% user.tweets.each do |tweet|  %>
-    <%= tweet.message %>
+
+    <% @tweets.each do |tweet| %>
+    <%= tweet.user.handle %>
+    <%= tweet.created_at.strftime("%m/%d/%y at %I:%M%p")  %><br>
+    <%= tweet.message  %><br><br>
     <% end %>
-  <% end %>
+
 
 </div>

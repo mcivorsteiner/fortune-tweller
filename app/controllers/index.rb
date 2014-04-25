@@ -28,6 +28,8 @@ end
 
 get '/profile/:handle/following/tweets' do
   @users = current_user.following
+  @tweets = @users.map {|user| user.tweets}.flatten
+  @tweets.sort!{|a,b| b.created_at <=> a.created_at}
   erb :following_tweets
 end
 
