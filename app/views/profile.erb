@@ -4,11 +4,15 @@
   <h2><%= @user.handle %></h2>
   <h3><%= @user.name %></h3>
 
-  <% if not_my_page? && !following? %>
-    <form action='/follow' method='post'>
-      <button type="submit">Follow</button>
-      </form><br>
-  <% end %>
+<% if not_my_page? && !following? %>
+  <form action='/follow/<%= @user.handle %>' method='post'>
+    <button type="submit">Follow</button>
+    </form><br>
+<% elsif not_my_page? && following? %>
+  <form action='/unfollow' method='post'>
+    <button type="submit">Unfollow</button>
+    </form><br>
+<% end %>
 
   <a href="/profile/<%= @user.handle %>/followers">Followers</a><br>
 
