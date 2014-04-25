@@ -1,13 +1,28 @@
+body {
+  font-family: Avenir;
+}
+
 .container {
   margin: 20px auto;
   width: 60%;
   padding: 0px 20px 20px 20px;
   border: 1px dotted black;
 }
+a {
+  padding: 5px 1em;
+  font-weight: bold;
+}
+
 th {
   text-align: left;
 }
 
-h2 {
+header {
   text-align: center;
+}
+
+label{
+    display: inline-block;
+    width: 125px;
+    margin: 5px;
 }

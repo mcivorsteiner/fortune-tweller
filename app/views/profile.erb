@@ -1,17 +1,16 @@
 <div class="profile container">
-  <h3><%= @user.handle %><br>
-  <%= @user.name %></h3>
+  <h2><%= @user.handle %></h2>
+  <h3><%= @user.name %></h3>
 
-  <p><a href="/profile/<%= @user.handle %>/followers">Followers</a></p><br>
-  </p>
+  <a href="/profile/<%= @user.handle %>/followers">Followers</a><br>
 
-  <p><a href="/profile/<%= @user.handle %>/following">Following</a></p><br>
+  <a href="/profile/<%= @user.handle %>/following">Following</a><br>
 
 <h3>Send a tweet!</h3>
   <form action='/tweet' method='post'>
     <input type='text' name='message'>
     <input type='submit' value='Tweet'>
-  </form> 
+  </form>
 
   <h3>Your tweets:</h3>
   <ul>
