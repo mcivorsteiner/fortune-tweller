@@ -2,6 +2,34 @@
 <!-- <div id="title"> <h3>Profile</h3> </div> -->
 
 <div class="profile container">
+  <h2><%= @user.handle %></h2>
+  <h3><%= @user.name %></h3>
+  <img src=" <%= @user.gravatar_url%> " > </img>
+
+<% if not_my_page? && !following? %>
+  <form action='/follow/<%= @user.handle %>' method='post'>
+    <button type="submit">Follow</button>
+    </form><br>
+<% elsif not_my_page? && following? %>
+  <form action='/unfollow/<%= @user.handle %>' method='post'>
+    <button type="submit">Unfollow</button>
+    </form><br>
+<% end %>
+
+  <a href="/profile/<%= @user.handle %>/followers">Followers</a><br>
+
+  <a href="/profile/<%= @user.handle %>/following">Following</a><br>
+
+<h3>Send a tweet!</h3>
+  <form action='/tweet' method='post'>
+    <input type='text' name='message'>
+    <input type='submit' value='Tweet'>
+  </form>
+
+  <h3>Your tweets:</h3>
+  <ul>
+    <% @tweets.each do |tweet| %>
+      <li><%= tweet.message  %></li>
   <div class="profile_header">
     <h2><%= @user.handle %></h2>
     <!-- <h3><%= @user.name %></h3> -->
@@ -14,6 +42,7 @@
       <form action='/unfollow/<%= @user.handle %>' method='post'>
         <button type="submit">Unfollow</button>
         </form><br>
+>>>>>>> 6e7d9105e6f3d9a5bc62c3fbbe4cccb5685819a3
     <% end %>
 
     <a href="/profile/<%= @user.handle %>/followers">Followers <%= @user.follower_count %></a><br>
