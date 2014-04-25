@@ -7,6 +7,7 @@ end
 
 post '/sign_up' do
   @user=User.create(params)
+  User.create_gravatar(params[:email])
   session[:handle]=@user.handle
   redirect "/list_all_users"
 end

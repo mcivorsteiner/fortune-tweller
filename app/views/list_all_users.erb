@@ -1,11 +1,22 @@
 <!-- <div id="title"> Fortune cookie + twitter. </div> -->
 
 <div class="container">
-  <h3> List all users </h3>
+  <h3> All Fortune Tweller Users: </h3>
 
   <% @users.each do |user| %>
+    <div class="container">
+      <img src=" <%= user.gravatar_url%> " > </img>
+    </div>
+    <Handle: <a href="/profile/<%= user.handle %>"><%= user.handle %></a> <br>
+    Fullname: <%= user.name %>
+    <% followings = current_user.following
+      f_id = []
+     followings.each do |followee|
+        f_id << followee.id
+      end%>
     <li> Handle: <a href="/profile/<%= user.handle %>"><%= user.handle %></a> </li>
     <li> Fullname: <%= user.name %> </li>
+
       <% f_id = current_user.following.map { |followee| followee.id } %>
 
       <% if !(f_id.include?(user.id)) %>
