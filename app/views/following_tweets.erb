@@ -1,15 +1,15 @@
 <div class="container">
 <h3>Tweets from Users you Follow:</h3>
 
-
-    <% @tweets.each do |tweet| %>
-    <div class="gravatar">
-      <img class="grav_small" src=" <%= tweet.user.user_gravitar_url%> " > </img>
-    </div>
-    <%= tweet.user.handle %>
-    <%= tweet.created_at.strftime("%m/%d/%y at %I:%M%p")  %><br>
-    <%= tweet.message  %><br><br>
-    <% end %>
-
+<div class="tweet_container">
+  <table>
+      <% @tweets.each do |tweet| %>
+        <!-- <div class="gravatar"> -->
+<div class="clearfix">
+          <img class="grav_small" src=" <%= tweet.user.user_gravitar_url%> "></img>
+        <!-- </div> -->
+        <p id="tweet"><font size=0.5em><%= tweet.get_time  %></font><br><%= tweet.message %> <font color=red><%= random_fortunes %></font><p></div>
+      <% end %>
+  </table>
 
 </div>
