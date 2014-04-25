@@ -17,17 +17,18 @@
   <a href="/profile/<%= @user.handle %>/followers">Followers</a><br>
 
   <a href="/profile/<%= @user.handle %>/following">Following</a><br>
+<div class="tweet_form">
+  <h3>Send a tweet!</h3>
+    <form action='/tweet' method='post'>
+      <input type='text' name='message'>
+      <input type='submit' value='Tweet'>
+    </form>
 
-<h3>Send a tweet!</h3>
-  <form action='/tweet' method='post'>
-    <input type='text' name='message'>
-    <input type='submit' value='Tweet'>
-  </form>
-
-  <h3>Your tweets:</h3>
-  <ul>
-    <% @tweets.each do |tweet| %>
-      <li><%= tweet.message  %></li>
-    <% end %>
-  </ul>
+    <h3>Your tweets:</h3>
+    <ul>
+      <% @tweets.each do |tweet| %>
+        <li><%= tweet.message  %></li>
+      <% end %>
+    </ul>
+  </div>
 </div>
