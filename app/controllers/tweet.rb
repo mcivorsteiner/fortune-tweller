@@ -1,8 +1,9 @@
 
-post '/tweet' do 
-  @user = current_user
-  @tweet = Tweet.new(params)
-  @tweet.update_attribute(:user_id, current_user.id)
-  @tweet.save
-  redirect "/profile/#{@user.handle}"
+post '/tweet' do
+  tweet = current_user.tweets.create(params)
+  if tweet.valid?
+    redirect "/profile/#{current_user.handle}"
+  else
+    tweet.errors.full_messages
+  end
 end
