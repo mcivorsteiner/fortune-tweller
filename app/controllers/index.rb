@@ -9,19 +9,27 @@ post '/sign_up' do
   @user=User.create(params)
   User.create_gravatar(params[:email])
   session[:handle]=@user.handle
-  redirect "/list_all_users"
+  if User.all == 0
+    redirect "/list_all_users"
+  else
+    redirect "/profile/#{@user.handle}"
+  end
 end
 
 get '/list_all_users' do
-  @users = User.where("handle != ?", current_user.handle)
-  erb :list_all_users
+    @users = User.where("handle != ?", current_user.handle)
+    erb :list_all_users
 end
 
 post '/login' do
   @user=User.find_by_handle(params[:handle])
   if @user && @user.password_hash == params[:password_hash]
     session[:handle]=@user.handle
-    redirect "/profile/#{@user.handle}/following/tweets"
+    if no_tweets_from_following?
+      redirect "/profile/#{@user.handle}"
+    else
+      redirect "/profile/#{@user.handle}/following/tweets"
+    end
   else
     erb :invalid
   end

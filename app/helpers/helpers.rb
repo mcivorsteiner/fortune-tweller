@@ -29,4 +29,9 @@ helpers do
     fortune = ["you'll never make it!", "you are very silly", "#FML", "you should drink to forget", "quit DBC today!"]
     fortune.shuffle.last
   end
+
+  def no_tweets_from_following?
+    current_user.following.each {|user| user.tweets}.empty?
+  end
+
 end

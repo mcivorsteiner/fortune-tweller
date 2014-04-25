@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
   def self.create_gravatar email
     current_user = User.find_by_email(email)
     g_url = current_user.gravatar_url
-    current_user.update_attributes(g_url)
+    current_user.update_attributes(user_gravitar_url: g_url)
   end
 
   def follower_count
