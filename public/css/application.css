@@ -38,7 +38,9 @@ GENERAL
   border-radius:  10px;
 }
 
-
+.gravatar {
+  border-radius: 10px;
+}
 
 a {
   text-decoration: none;
