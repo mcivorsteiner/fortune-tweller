@@ -18,6 +18,15 @@ gem 'rake', '10.0.1'
 
 gem 'shotgun'
 
+#gems for setting up gravatar
+gem 'gravtastic'
+gem 'mongo_mapper'
+
+# another gravatar gem
+#gem 'gravatarify', '~> 3.0.0'
+
+
+
 group :test do
   gem 'faker'
   gem 'rspec'

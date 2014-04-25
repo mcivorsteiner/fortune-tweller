@@ -1,6 +1,11 @@
-class User < ActiveRecord::Base
+require 'gravtastic'
 
-  validates :handle, uniqueness: :true
+class User < ActiveRecord::Base
+  include Gravtastic
+  gravtastic :secure => true, :filetype => :gif, :size => 200, :default => "monsterid"
+
+  validates :handle, uniqueness: :true, presence: true,
+            format: { with: /\A[a-zA-Z0-9_-]+\Z/, message: "Invalid handle format." }
   validates :email, uniqueness: :true
 
   has_many :tweets
@@ -13,5 +18,16 @@ class User < ActiveRecord::Base
     following
   end
 
-  
+
+  def self.create_gravatar email
+    current_user = User.find_by_email(email)
+    g_url = current_user.gravatar_url
+    current_user.update_attributes(g_url)
+
+    # need to know current_user
+    # grab current_user.email
+    # gravatar return gravatar url to me
+    # then this update attribute for gravatar url
+  end
+
 end

@@ -1,14 +1,18 @@
 <div class="container">
-  <h3> List all users </h3>
+  <h3> All Fortune Tweller Users: </h3>
 
   <% @users.each do |user| %>
-    <li> Handle: <a href="/profile/<%= user.handle %>"><%= user.handle %></a> </li>
-    <li> Fullname: <%= user.name %> </li>
+    <div class="container">
+      <img src=" <%= user.gravatar_url%> " > </img>
+    </div>
+
+    <Handle: <a href="/profile/<%= user.handle %>"><%= user.handle %></a> <br>
+    Fullname: <%= user.name %>
     <% followings = current_user.following
       f_id = []
      followings.each do |followee|
         f_id << followee.id
-        end%>
+      end%>
 
       <% if !(f_id.include?(user.id)) %>
         <form action='/follow/<%= user.handle %>' method='post'>
