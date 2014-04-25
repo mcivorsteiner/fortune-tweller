@@ -1,7 +1,9 @@
 <div class="container">
-  <p> List all users </p>
+  <h3> List all users </h3>
 
   <% @users.each do |user| %>
-    <li><%= user.handle %> -- <%= user.name %></li>
+    <li> Handle: <%= user.handle %> </li>
+    <li> Fullname: <%= user.name %> </li>
+    <hr>
   <% end %>
 </div>
