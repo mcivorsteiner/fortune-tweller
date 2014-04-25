@@ -12,7 +12,7 @@ post '/sign_up' do
 end
 
 get '/list_all_users' do
-  @users = User.all
+  @users = User.where("handle != ?", current_user.handle)
   erb :list_all_users
 end
 
@@ -25,6 +25,8 @@ post '/login' do
     erb :invalid
   end
 end
+
+
 
 get '/logout' do
   session[:handle]=nil
