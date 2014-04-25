@@ -20,16 +20,12 @@
 <title>Fortune Tweller</title>
 </head>
 <header>
-  <a href="/" id="logo">
-    <h1> Fortune Tweller </h1>
-    <h4>Welcome, <%= @user.handle %></h4>
-  </a>
+  <h1> Fortune Tweller </h1>
   <% if logged_in? %>
-    <nav>
-      <li><a href="/profile/<%= @user.handle %>">Profile</a></li>
-      <li><a href="/list_all_users">Find Users</a></li>
-      <li><a href="/logout">Logout</a></li>
-    </nav>
+    <h4>Welcome, <%= current_user.handle %></h4>
+    <a href="/profile/<%= current_user.handle %>">Profile</a>
+    <a href="/list_all_users">Find Users</a>
+    <a href="/logout">Logout</a>
   <% end %>
 </header>
 <body>

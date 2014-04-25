@@ -12,4 +12,6 @@ class User < ActiveRecord::Base
     following.map! { |followee| User.find(followee.user_id) }
     following
   end
+
+  
 end

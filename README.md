@@ -1,5 +1,5 @@
 # Fortune-Tweller
-### Kaelin, Alistair, Ahn, Ki
+### Kaelin, Alistair, Anhkim, Ki
 ## MVP User Stories
 - Users can login and/or sign up
 - Users can find other users
