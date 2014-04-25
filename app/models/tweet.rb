@@ -6,6 +6,6 @@ class Tweet < ActiveRecord::Base
 
   def get_time
     Time.zone = 'Pacific Time (US & Canada)'
-    self.created_at.strftime("%m/%d/%y at %I:%M%p")
+    self.created_at.strftime("%m/%d/%y at %H:%M%p")
   end
 end
