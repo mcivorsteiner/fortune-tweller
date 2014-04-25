@@ -24,5 +24,5 @@ helpers do
   def not_my_page?
     current_user.handle != @user.handle
   end
-  
+
 end

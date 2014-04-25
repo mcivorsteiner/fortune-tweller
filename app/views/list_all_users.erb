@@ -4,6 +4,21 @@
   <% @users.each do |user| %>
     <li> Handle: <a href="/profile/<%= user.handle %>"><%= user.handle %></a> </li>
     <li> Fullname: <%= user.name %> </li>
+    <% followings = current_user.following
+      f_id = []
+     followings.each do |followee|
+        f_id << followee.id
+        end%>
+
+      <% if !(f_id.include?(user.id)) %>
+        <form action='/follow/<%= user.handle %>' method='post'>
+          <button type="submit">Follow</button>
+        </form><br>
+    <% elsif f_id.include?(user.id)%>
+      <form action='/unfollow' method='post'>
+        <button type="submit">Unfollow</button>
+      </form><br>
+    <% end %>
     <hr>
   <% end %>
 </div>
