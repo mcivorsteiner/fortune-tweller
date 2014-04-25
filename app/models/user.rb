@@ -1,5 +1,4 @@
 class User < ActiveRecord::Base
-
   validates :handle, uniqueness: :true
   validates :email, uniqueness: :true
 
@@ -12,6 +11,4 @@ class User < ActiveRecord::Base
     following.map! { |followee| User.find(followee.user_id) }
     following
   end
-
-  
 end

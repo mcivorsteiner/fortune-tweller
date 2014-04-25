@@ -18,6 +18,9 @@ gem 'rake', '10.0.1'
 
 gem 'shotgun'
 
+# for searching functionality
+gem 'elasticsearch'
+
 group :test do
   gem 'faker'
   gem 'rspec'

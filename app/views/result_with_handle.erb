@@ -1,12 +1,5 @@
-<h4>
-  <form action= "/search_handle" method="/post">
-      Search by handle: <input type="text" name="handle"> </input type="submit"> <button> Submit</button>
-  </form>
-</h4>
-
-
 <div class="container">
-  <h3> List all users </h3>
+  <h3> Result: </h3>
 
   <% @users.each do |user| %>
     <li> Handle: <a href="/profile/<%= user.handle %>"><%= user.handle %></a> </li>

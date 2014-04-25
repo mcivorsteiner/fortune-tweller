@@ -30,3 +30,7 @@ get '/logout' do
   session[:handle]=nil
   redirect '/'
 end
+
+get '/search' do
+  redirect 'result_with_handle'
+end
