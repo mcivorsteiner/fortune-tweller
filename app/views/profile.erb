@@ -30,18 +30,14 @@
       <input type='submit' value='Tweet'>
     </form>
   </div>
-
+</div>
   <!--############## TWEET LIST ##########-->
+<div id="title"> <h3>Tweets:</h3> </div>
 
-
-  <div class="tweet_list">
-    <h3>Your tweets:</h3>
-    <ul>
+<div class="tweet_container">
+  <table>
       <% @tweets.each do |tweet| %>
-        <li>
-          <p><%= tweet.created_at.strftime("%m/%d/%y at %I:%M%p")  %></p><%= tweet.message  %>
-        </li>
+        <p id="tweet"><font size=0.5em><%= tweet.get_time  %></font><br><%= tweet.message %> <font color=red><%= random_fortunes %></font><p>
       <% end %>
-    </ul>
-  </div>
+  </table>
 </div>
