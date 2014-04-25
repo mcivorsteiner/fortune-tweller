@@ -1,10 +1,8 @@
 
 post '/tweet' do 
-  session[:user_id] = 3
-
+  @user = current_user
   @tweet = Tweet.new(params)
-  @tweet.update_attribute(:user_id, session[:user_id])
+  @tweet.update_attribute(:user_id, current_user.id)
   @tweet.save
-  @user = User.find(session[:user_id])
   redirect "/profile/#{@user.handle}"
 end
