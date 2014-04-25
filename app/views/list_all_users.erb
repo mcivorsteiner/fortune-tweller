@@ -4,11 +4,11 @@
   <h3> All Fortune Tweller Users: </h3>
 
   <% @users.each do |user| %>
-    <div class="container">
-      <img src=" <%= user.user_gravitar_url%> " > </img>
+    <div>
+      <img class="gravatar" src=" <%= user.user_gravitar_url%> " > </img>
     </div>
-    <Handle: <a href="/profile/<%= user.handle %>"><%= user.handle %></a> <br>
-    Fullname: <%= user.name %>
+    
+    
     <% followings = current_user.following
       f_id = []
      followings.each do |followee|

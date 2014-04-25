@@ -32,7 +32,15 @@ GENERAL
   text-align: center;
 }
 
+.grav_small {
+  width: 100px;
+  height: 100px;
+  border-radius:  10px;
+}
 
+.gravatar {
+  border-radius: 10px;
+}
 
 a {
   text-decoration: none;
@@ -134,7 +142,7 @@ PROFILE PAGE
   padding: 5% 5% 0%;
   text-align: center;
   border-radius: .5em;
-  background-image:url('../images/wood_seamless2.jpg');
+  background-image:url('../images/wood_seamless.jpg');
 }
 
 .text_input {
@@ -307,6 +315,32 @@ nav a.selected, nav a:hover {
     border-bottom: 5px solid #2980b9;
     margin-bottom: 60px;
   }
+
+.grav_small {
+  display: inline-block;
+  float: left;
+}
+
+#tweet {
+  display: inline-block;
+  background-image:url('../images/paper.png');
+  background-repeat:no-repeat;
+  margin: 0px auto 40px;
+  width: 60%;
+  height: 70px;
+  padding: 5px 30px 20px 30px;
+  text-align: center;
+  color: black;
+}
+
+.tweet_container {
+  width: 70%;
+  margin: 0 auto;
+  padding: 5% 5% 0%;
+  text-align: center;
+  border-radius: .5em;
+  background-image:url('../images/wood_seamless.jpg');
+}
 
 
   .text_input {

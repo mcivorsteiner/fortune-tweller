@@ -30,9 +30,10 @@
   <% if logged_in? %>
    <nav>
     <ul>
+      <li><a href="/profile/<%= current_user.handle %>/following/tweets">Home</a></li>
       <li><a href="/profile/<%= current_user.handle %>">Profile</a></li>
       <li><a href="/list_all_users">Find Users</a></li>
-      <li><a href="/profile/<%= current_user.handle %>/following/tweets">Home</a></li>
+      
 
 
       <li><a href="/logout">Logout</a></li>
