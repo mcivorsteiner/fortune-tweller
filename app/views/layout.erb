@@ -10,18 +10,22 @@
   <!--
     application.css is where you put your styles
   -->
+  <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,700' rel='stylesheet' type='text/css'>
+
   <link rel="stylesheet" href="/css/application.css">
-  <link rel="stylesheet" href="/css/responsive.css">
+
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
 </head>
-<header>
-  <a href="/" id="logo">
+<header class="clearfix">
+  <div class="company_header"
+    <a href="/" id="logo">
     <h1> Fortune Tweller </h1>
   </a>
+  </div>
   <% if logged_in? %>
    <nav>
     <ul>
@@ -34,7 +38,10 @@
 
 </header>
 <body>
+  <div id="title"> Fortune cookie + twitter. </div>
+  
   <div id="wrapper">
+
     <%= yield %>
   </div>
 </body>
