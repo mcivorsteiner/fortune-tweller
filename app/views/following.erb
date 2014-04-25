@@ -1,0 +1,11 @@
+<div class="profile container">
+  <h3><%= @user.handle %><br>
+  <%= @user.name %></h3>
+
+  <h3>Following</h3>
+  <ul>
+    <% @following.each do |followee| %>
+      <li><%= followee.handle  %></li>
+    <% end %>
+  </ul>
+</div>
