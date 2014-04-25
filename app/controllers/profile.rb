@@ -1,7 +1,7 @@
 get '/profile/:handle' do
   if logged_in?
     @user = User.find_by_handle(params[:handle])
-    @tweets = @user.tweets
+    @tweets = @user.tweets.sort!{|a,b| b.created_at <=> a.created_at}
     erb :profile
   else
     redirect '/'
