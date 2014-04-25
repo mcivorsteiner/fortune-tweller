@@ -13,5 +13,11 @@ class User < ActiveRecord::Base
     following
   end
 
-  
+  def follower_count
+    followers.length
+  end
+
+  def following_count
+    following.length
+  end
 end
