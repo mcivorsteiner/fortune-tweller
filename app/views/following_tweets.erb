@@ -1,0 +1,10 @@
+<div class="container">
+<h3>Tweets from Users you Follow:</h3>
+
+  <% @users.each do |user| %>
+    <%= user.handle %> <% user.tweets.each do |tweet|  %>
+    <%= tweet.message %>
+    <% end %>
+  <% end %>
+
+</div>

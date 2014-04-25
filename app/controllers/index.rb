@@ -20,13 +20,16 @@ post '/login' do
   @user=User.find_by_handle(params[:handle])
   if @user && @user.password_hash == params[:password_hash]
     session[:handle]=@user.handle
-    redirect "/profile/#{@user.handle}"
+    redirect "/profile/#{@user.handle}/following/tweets"
   else
     erb :invalid
   end
 end
 
-
+get '/profile/:handle/following/tweets' do
+  @users = current_user.following
+  erb :following_tweets
+end
 
 get '/logout' do
   session[:handle]=nil
