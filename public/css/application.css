@@ -110,7 +110,23 @@ nav a {
 PROFILE PAGE
 ***********************************/
 
+.tweet_form {
+  padding-top: 2em;
+  /*border-top: 1px solid black;*/
+}
 
+.tweet_list {
+  padding-top: 2em;
+}
+
+.tweet_list ul p {
+  font-size: 0.75em;
+  margin:0;
+}
+
+.tweet_list ul li {
+  margin-bottom: 0.5em;
+}
 
 
 /**********************************
@@ -164,16 +180,7 @@ nav a, nav a:visited {
 
 /* selected nav link */
 nav a.selected, nav a:hover {
-  color: #184d70;
-}
-
-.tweet_form {
-  padding-top: 2em;
-  /*border-top: 1px solid black;*/
-}
-
-.tweet_list {
-  padding-top: 2em;
+  color: #49a2df;
 }
 
 

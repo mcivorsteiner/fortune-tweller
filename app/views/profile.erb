@@ -1,5 +1,5 @@
 
-<div id="title"> <h3>Profile</h3> </div>
+<!-- <div id="title"> <h3>Profile</h3> </div> -->
 
 <div class="profile container">
   <div class="profile_header">
@@ -16,9 +16,9 @@
         </form><br>
     <% end %>
 
-    <a href="/profile/<%= @user.handle %>/followers">Followers <%= @user.followers.count %></a><br>
+    <a href="/profile/<%= @user.handle %>/followers">Followers <%= @user.follower_count %></a><br>
 
-    <a href="/profile/<%= @user.handle %>/following">Following</a><br>
+    <a href="/profile/<%= @user.handle %>/following">Following <%= @user.following_count %></a><br>
   </div>
 
   <!--############## TWEET INPUT ##########-->
@@ -38,7 +38,9 @@
     <h3>Your tweets:</h3>
     <ul>
       <% @tweets.each do |tweet| %>
-        <li><%= tweet.message  %></li>
+        <li>
+          <p><%= tweet.created_at.strftime("%m/%d/%y at %I:%M%p")  %></p><%= tweet.message  %>
+        </li>
       <% end %>
     </ul>
   </div>
