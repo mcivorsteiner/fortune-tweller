@@ -14,8 +14,10 @@
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
+  <link rel="stylesheet" href="css/responsive.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
-  <title></title>
+<title>Fortune Tweller</title>
 </head>
 <header>
   <h1> Fortune Tweller </h1>
@@ -24,12 +26,11 @@
     <a href="/profile/<%= current_user.handle %>">Profile</a>
     <a href="/list_all_users">Find Users</a>
     <a href="/logout">Logout</a>
-
   <% end %>
 </header>
 <body>
-
-
-  <%= yield %>
+  <div id="wrapper">
+    <%= yield %>
+  </div>
 </body>
 </html>
