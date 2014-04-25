@@ -54,6 +54,9 @@ h3 {
   margin: 0 0 1em 0;
 }
 
+ul {
+  list-style: none;
+}
 
 
 /**********************************
@@ -102,6 +105,11 @@ nav a {
   font-weight: 800;
   padding: 15px 10px;
 }
+
+/**********************************
+PROFILE PAGE
+***********************************/
+
 
 
 
@@ -157,6 +165,15 @@ nav a, nav a:visited {
 /* selected nav link */
 nav a.selected, nav a:hover {
   color: #184d70;
+}
+
+.tweet_form {
+  padding-top: 2em;
+  /*border-top: 1px solid black;*/
+}
+
+.tweet_list {
+  padding-top: 2em;
 }
 
 
