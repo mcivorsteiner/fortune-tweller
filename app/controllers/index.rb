@@ -1,11 +1,13 @@
 get '/' do
+  if logged_in?
+    @user = current_user
+  end
     erb :index
 end
 
 post '/sign_up' do
-  @users = User.all
   @user=User.create(params)
-  session[:user_id]=@user.id
+  session[:handle]=@user.handle
   redirect "/list_all_users"
 end
 
@@ -17,14 +19,14 @@ end
 post '/login' do
   @user=User.find_by_handle(params[:handle])
   if @user && @user.password_hash == params[:password_hash]
-    session[:user_id]=@user.id
-    redirect "/users/#{@user.id}"
+    session[:handle]=@user.handle
+    redirect "/profile/#{@user.handle}"
   else
     erb :invalid
   end
 end
 
-post '/logout' do
-  session[:user_id]=nil
+get '/logout' do
+  session[:handle]=nil
   redirect '/'
 end
