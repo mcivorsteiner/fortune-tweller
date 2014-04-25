@@ -11,4 +11,18 @@ helpers do
   def logged_in?
     !current_user.nil?
   end
+
+  def following?
+     followings = current_user.following
+     f_id = []
+     followings.each do |followee|
+        f_id << followee.id
+        end
+      return true if f_id.include?(@user.id)
+  end
+
+  def not_my_page?
+    current_user.handle != @user.handle
+  end
+  
 end

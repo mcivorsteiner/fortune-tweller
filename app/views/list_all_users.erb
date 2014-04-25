@@ -2,7 +2,7 @@
   <h3> List all users </h3>
 
   <% @users.each do |user| %>
-    <li> Handle: <%= user.handle %> </li>
+    <li> Handle: <a href="/profile/<%= user.handle %>"><%= user.handle %></a> </li>
     <li> Fullname: <%= user.name %> </li>
     <hr>
   <% end %>

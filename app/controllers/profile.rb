@@ -19,3 +19,7 @@ get '/profile/:handle/following' do
   @following = @user.following
   erb :following
 end
+
+post '/follow' do
+
+end
