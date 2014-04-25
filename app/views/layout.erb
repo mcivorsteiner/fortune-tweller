@@ -20,8 +20,8 @@
 <header>
   <h1> Fortune Tweller </h1>
   <% if logged_in? %>
-    <h4>Welcome, <%= @user.handle %></h4>
-    <a href="/profile/<%= @user.handle %>">Profile</a>
+    <h4>Welcome, <%= current_user.handle %></h4>
+    <a href="/profile/<%= current_user.handle %>">Profile</a>
     <a href="/list_all_users">Find Users</a>
     <a href="/logout">Logout</a>
 
