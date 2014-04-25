@@ -5,7 +5,7 @@
   <h3>Followers</h3>
   <ul>
     <% @followers.each do |follower| %>
-      <li><%= follower.handle  %></li>
+      <li><a href="/profile/<%= follower.handle %>"><%= follower.handle  %></a></li>
     <% end %>
   </ul>
 </div>

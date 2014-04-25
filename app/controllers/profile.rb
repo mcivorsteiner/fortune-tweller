@@ -1,6 +1,6 @@
 get '/profile/:handle' do
   if logged_in?
-    @user = current_user
+    @user = User.find_by_handle(params[:handle])
     @tweets = @user.tweets
     erb :profile
   else
