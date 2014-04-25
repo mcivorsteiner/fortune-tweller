@@ -28,6 +28,10 @@ post '/follow/:handle' do
   redirect '/list_all_users'
 end
 
-post '/unfollow' do
-
+post '/unfollow/:handle' do
+  @user = current_user
+  @user_on_page =  User.find_by_handle(params[:handle])
+  @user_on_page.followers.delete(@user)
+  @user_on_page.save
+  redirect '/list_all_users'
 end

@@ -9,7 +9,7 @@
     <button type="submit">Follow</button>
     </form><br>
 <% elsif not_my_page? && following? %>
-  <form action='/unfollow' method='post'>
+  <form action='/unfollow/<%= @user.handle %>' method='post'>
     <button type="submit">Unfollow</button>
     </form><br>
 <% end %>
