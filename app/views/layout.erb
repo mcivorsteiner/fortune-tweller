@@ -11,22 +11,27 @@
     application.css is where you put your styles
   -->
   <link rel="stylesheet" href="/css/application.css">
+  <link rel="stylesheet" href="/css/responsive.css">
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
-  <link rel="stylesheet" href="css/responsive.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
-<title>Fortune Tweller</title>
 </head>
 <header>
-  <h1> Fortune Tweller </h1>
+  <a href="/" id="logo">
+    <h1> Fortune Tweller </h1>
+  </a>
   <% if logged_in? %>
-    <h4>Welcome, <%= current_user.handle %></h4>
-    <a href="/profile/<%= current_user.handle %>">Profile</a>
-    <a href="/list_all_users">Find Users</a>
-    <a href="/logout">Logout</a>
+   <nav>
+    <ul>
+      <li><a href="/profile/<%= current_user.handle %>">Profile</a></li>
+      <li><a href="/list_all_users">Find Users</a></li>
+      <li><a href="/logout">Logout</a></li>
+    </ul>
+  </nav>
   <% end %>
+
 </header>
 <body>
   <div id="wrapper">
@@ -34,3 +39,4 @@
   </div>
 </body>
 </html>
+
