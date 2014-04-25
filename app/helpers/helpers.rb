@@ -25,4 +25,9 @@ helpers do
     current_user.handle != @user.handle
   end
 
+  def random_fortunes
+    fortune = ["you'll never make it!", "you are very silly", "#FML", "you should drink to forget", "quit DBC today!"]
+    fortune.shuffle.last
+  end
+
 end

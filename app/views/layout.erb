@@ -23,7 +23,8 @@
 <header class="clearfix">
   <div class="company_header"
     <a href="/" id="logo">
-    <h1> Fortune Tweller </h1>
+    <img class="logo_img" src='../images/logo.png'>
+    <!-- <h1> Fortune Tweller </h1> -->
   </a>
   </div>
   <% if logged_in? %>
@@ -39,7 +40,7 @@
 </header>
 <body>
   <div id="title"> Fortune cookie + twitter. </div>
-  
+
   <div id="wrapper">
 
     <%= yield %>

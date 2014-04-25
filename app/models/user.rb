@@ -18,20 +18,11 @@ class User < ActiveRecord::Base
     following
   end
 
-<<<<<<< HEAD
-
   def self.create_gravatar email
     current_user = User.find_by_email(email)
     g_url = current_user.gravatar_url
     current_user.update_attributes(g_url)
 
-    # need to know current_user
-    # grab current_user.email
-    # gravatar return gravatar url to me
-    # then this update attribute for gravatar url
-  end
-
-=======
   def follower_count
     followers.length
   end
@@ -39,5 +30,4 @@ class User < ActiveRecord::Base
   def following_count
     following.length
   end
->>>>>>> 6e7d9105e6f3d9a5bc62c3fbbe4cccb5685819a3
 end
