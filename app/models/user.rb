@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
 
-  #validates :handle, uniqueness: :true
-  #validates :email, uniqueness: :true
+  validates :handle, uniqueness: :true
+  validates :email, uniqueness: :true
 
   has_many :tweets
   has_many :followings

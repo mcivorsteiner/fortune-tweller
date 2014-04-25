@@ -1,10 +1,5 @@
 get '/' do
-  # if logged_in?
-  #   @user = User.find(session[:user_id])
-  #   redirect "/users/#{@user.id}"
-  # else
     erb :index
-  # end
 end
 
 post '/sign_up' do
@@ -28,10 +23,6 @@ post '/login' do
     erb :invalid
   end
 end
-
-# get '/sessions' do
-#   erb :index
-# end
 
 post '/logout' do
   session[:user_id]=nil
