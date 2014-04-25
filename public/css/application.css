@@ -10,7 +10,7 @@ body {
 
 .container {
   margin: 20px auto;
-  width: 60%;
+  width: 73%;
   padding: 20px;
   border: 1px solid gray;
   border-radius: 1em;
@@ -141,8 +141,9 @@ PROFILE PAGE
   width: 90%;
 }
 
+
 .tweet_form {
-  padding-top: 2em;
+  padding-top: 0px;
   /*border-top: 1px solid black;*/
 }
 
@@ -271,7 +272,7 @@ nav a.selected, nav a:hover {
 
 }
 
-@media screen and (min-width: 660px) {
+@media screen and (min-width: 850px) {
 
   /**********************************
   HEADER
@@ -312,6 +313,11 @@ nav a.selected, nav a:hover {
     width: 90%;
     max-width: 300px;
   }
+
+  .tweet_input {
+  width: 80%;
+  max-width: 600px;
+}
 
 }
 
