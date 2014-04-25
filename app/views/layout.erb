@@ -14,22 +14,27 @@
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
+  <link rel="stylesheet" href="css/responsive.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
-  <title></title>
+<title>Fortune Tweller</title>
 </head>
 <header>
-  <h1> Fortune Tweller </h1>
-  <% if logged_in? %>
+  <a href="/" id="logo">
+    <h1> Fortune Tweller </h1>
     <h4>Welcome, <%= @user.handle %></h4>
-    <a href="/profile/<%= @user.handle %>">Profile</a>
-    <a href="/list_all_users">Find Users</a>
-    <a href="/logout">Logout</a>
-
+  </a>
+  <% if logged_in? %>
+    <nav>
+      <li><a href="/profile/<%= @user.handle %>">Profile</a></li>
+      <li><a href="/list_all_users">Find Users</a></li>
+      <li><a href="/logout">Logout</a></li>
+    </nav>
   <% end %>
 </header>
 <body>
-
-
-  <%= yield %>
+  <div id="wrapper">
+    <%= yield %>
+  </div>
 </body>
 </html>
