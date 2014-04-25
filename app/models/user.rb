@@ -3,11 +3,9 @@ require 'gravtastic'
 class User < ActiveRecord::Base
   include Gravtastic
   gravtastic :secure => true, :filetype => :gif, :size => 150, :default => "monsterid"
-
   validates :handle, uniqueness: :true, presence: true,
             format: { with: /\A[a-zA-Z0-9_-]+\Z/, message: "Invalid handle format." }
   validates :email, uniqueness: :true
-
   has_many :tweets
   has_many :followings
   has_many :followers, class_name: "User", through: :followings, foreign_key: "follower_id"
@@ -22,6 +20,7 @@ class User < ActiveRecord::Base
     current_user = User.find_by_email(email)
     g_url = current_user.gravatar_url
     current_user.update_attributes(g_url)
+  end
 
   def follower_count
     followers.length
