@@ -2,10 +2,19 @@ body {
   font-family: Avenir;
 }
 
+#login {
+  padding: 0 5%;
+  background-image:url('../images/logo.png');
+  opacity: 0.75;
+  background-repeat:no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
 #wrapper {
-  max-width: 940px;
   margin: 0 auto;
   padding: 0 5%;
+
 }
 
 .container {
@@ -14,9 +23,33 @@ body {
   padding: 0px 20px 20px 20px;
   border: 1px solid gray;
   border-radius: 1em;
-  background-color: #ecf0f1;
+  color: black;
 }
 
+#tweet {
+  background-image:url('../images/paper.png');
+  background-repeat:no-repeat;
+  margin: 20px auto;
+  width: 70%;
+  height: 70px;
+  padding: 10px 30px 10px 30px;
+  text-align: center;
+  color: black;
+}
+
+.tweet_container {
+  width: 70%; 
+  margin: 0 auto;
+  padding: 5 5%;
+  text-align: center;
+  border-radius: .5em;
+  background-image:url('../images/wood_seamless.jpg');
+}
+
+input {
+  background-color: transparent;
+
+}
 
 label{
     display: inline-block;
@@ -33,12 +66,11 @@ GENERAL
 }
 
 
-
 a {
   text-decoration: none;
   padding: 5px 1em;
   font-weight: bold;
-  color: 11111;
+  color: black;
 }
 
 h1 {
@@ -70,7 +102,7 @@ header {
 #logo {
   text-align: center;
   margin: 0;
-  color: #fff;
+  /*color: #fff;*/
 }
 
 
@@ -120,10 +152,6 @@ COLORS
 ***********************************/
 
 /* site body */
-body {
-  background-color: #fff;
-  color: #999;
-}
 
 /* green header */
 header {

@@ -24,10 +24,12 @@
     <input type='submit' value='Tweet'>
   </form>
 
-  <h3>Your tweets:</h3>
-  <ul>
-    <% @tweets.each do |tweet| %>
-      <li><%= tweet.message  %></li>
-    <% end %>
-  </ul>
+</div>
+<div class="tweet_container">
+  <table>
+      <% fortune = ["you'll never make it!", "you are very silly", "#FML", "you should drink to forget", "quit DBC today!"] %>
+      <% @tweets.each do |tweet| %>
+        <p id="tweet"><%= tweet.message %> <font color=red><%= fortune.shuffle.pop %></font><p>
+      <% end %>
+  </table>
 </div>
