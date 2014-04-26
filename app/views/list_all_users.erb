@@ -5,7 +5,9 @@
 
   <% @users.each do |user| %>
     <div>
-      <img class="gravatar" src=" <%= user.user_gravitar_url%> " > </img>
+      <a href="/profile/<%= user.handle %>">
+        <img class="gravatar" src=" <%= user.user_gravitar_url%> " > </img>
+      </a>
     </div>
     
     

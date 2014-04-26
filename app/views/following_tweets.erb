@@ -5,9 +5,12 @@
   <table>
     <% @tweets.each do |tweet| %>
       <div class="clearfix">
-        <img class="grav_small" src=" <%= tweet.user.user_gravitar_url%> ">
-        <p id="tweet"><font size=0.5em><%= tweet.get_time  %></font><br><%= tweet.message %> <font color=red><%= random_fortunes %></font><p></div>
-      <% end %>
+        <!-- <a href="/profile/<%= tweet.user.handle %>" class="grav_link"> -->
+          <img class="grav_small" src=" <%= tweet.user.user_gravitar_url%> ">
+          <p id="tweet"><font size=0.5em><%= tweet.get_time  %></font><br><%= tweet.message %> <font color=red><%= random_fortunes %></font><p>
+        <!-- </a> -->
+      </div>
+    <% end %>
   </table>
 
 </div>

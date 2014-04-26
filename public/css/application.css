@@ -321,15 +321,21 @@ nav a.selected, nav a:hover {
   float: left;
 }
 
+/*.grav_link {
+  display: inline-block;
+  float: right;
+}*/
+
 #tweet {
   display: inline-block;
   background-repeat:no-repeat;
   margin: 0px auto 40px;
   width: 60%;
   height: 70px;
-  padding: 5px 30px 20px 30px;
+  padding: 5px 10px 20px 30px;
   text-align: center;
   color: black;
+  /*float:left;*/
 }
 
 .tweet_container {
