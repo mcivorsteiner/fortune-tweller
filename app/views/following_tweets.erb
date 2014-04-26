@@ -3,11 +3,9 @@
 
 <div class="tweet_container">
   <table>
-      <% @tweets.each do |tweet| %>
-        <!-- <div class="gravatar"> -->
-<div class="clearfix">
-          <img class="grav_small" src=" <%= tweet.user.user_gravitar_url%> "></img>
-        <!-- </div> -->
+    <% @tweets.each do |tweet| %>
+      <div class="clearfix">
+        <img class="grav_small" src=" <%= tweet.user.user_gravitar_url%> ">
         <p id="tweet"><font size=0.5em><%= tweet.get_time  %></font><br><%= tweet.message %> <font color=red><%= random_fortunes %></font><p></div>
       <% end %>
   </table>

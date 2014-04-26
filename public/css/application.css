@@ -126,7 +126,7 @@ PROFILE PAGE
 ***********************************/
 
 #tweet {
-  background-image:url('../images/paper.png');
+  background-image:url('http://i.imgur.com/5AgKiqb.png');
   background-repeat:no-repeat;
   margin: 0px auto 40px;
   width: 70%;
@@ -142,7 +142,7 @@ PROFILE PAGE
   padding: 5% 5% 0%;
   text-align: center;
   border-radius: .5em;
-  background-image:url('../images/wood_seamless.jpg');
+  background-image:url('http://i.imgur.com/YsLEb96.jpg');
 }
 
 .text_input {
@@ -323,7 +323,6 @@ nav a.selected, nav a:hover {
 
 #tweet {
   display: inline-block;
-  background-image:url('../images/paper.png');
   background-repeat:no-repeat;
   margin: 0px auto 40px;
   width: 60%;
@@ -334,12 +333,8 @@ nav a.selected, nav a:hover {
 }
 
 .tweet_container {
-  width: 70%;
-  margin: 0 auto;
   padding: 5% 5% 0%;
-  text-align: center;
   border-radius: .5em;
-  background-image:url('../images/wood_seamless.jpg');
 }
 
 
