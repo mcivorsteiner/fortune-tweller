@@ -1,6 +1,15 @@
+require 'spec_helper'
+
 describe "post /sign_up route" do
   it "creates a new user" do
-    user = User.create(:name => "Jeff", :handle => "Jeffman", :password_hash => '1234', :email => "jeff@gmail.com")
-    expect(last_response).to include(user.name)
+    ## Arrange
+    params = {name: 'rao', handle: 'raorao', email: 'frao@gmail.com', password_hash: 'raosucks'}
+    User.destroy_all
+
+    ## Act
+    post '/sign_up', params
+
+    ## Assert
+    expect(User.count).to eq(1)
   end
 end
