@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   has_many :followings
   has_many :followers, class_name: "User", through: :followings, foreign_key: "follower_id"
 
+#CR the following method is given through AR when you define a has_many association - no need to redefine
   def following
     following = Following.where("follower_id = ?", self.id)
     following.map! { |followee| User.find(followee.user_id) }

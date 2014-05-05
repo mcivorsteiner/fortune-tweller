@@ -2,6 +2,9 @@ post '/sign_up' do
   @user=User.create(params)
   User.create_gravatar(params[:email])
   session[:handle]=@user.handle
+  #CR this would only happen if there were no users AND this one wasn't able to sign up
+  # in which case you should give an error and ask them to re-sign up. Use if @user.save to test
+  # instead of if User.all
   if User.all == 0
     redirect "/list_all_users"
   else
