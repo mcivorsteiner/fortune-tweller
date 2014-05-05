@@ -1,3 +1,4 @@
+#CR nice use of tests, try using let or before to create your users and DRY up code
 require 'spec_helper'
 
 
@@ -29,7 +30,7 @@ describe "post /unfollow/:handle route" do
       params = { handle: @user2.handle}
       test_session = { 'rack.session' => { handle: @user1.handle } }
       post "/follow/#{@user2.handle}", params, test_session
-      
+
 
     ## Act
       post "/unfollow/#{@user2.handle}", params, test_session

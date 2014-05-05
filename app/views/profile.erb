@@ -42,6 +42,7 @@
 <div class="tweet_container">
   <table>
     <% @tweets.each do |tweet| %>
+    <!-- #CR font tags are not used anymore - use styles to set font size -->
       <p id="tweet"><font size=0.5em><%= tweet.get_time  %></font><br><%= tweet.message %> <font color=red><%= random_fortunes %></font><p>
     <% end %>
   </table>

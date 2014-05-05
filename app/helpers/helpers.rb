@@ -12,6 +12,7 @@ helpers do
     !current_user.nil?
   end
 
+  #CR @user and current_user are the same.  SO this would only be true if I am following myself
   def following?
      followings = current_user.following
      f_id = []

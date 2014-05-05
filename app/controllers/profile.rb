@@ -1,6 +1,8 @@
 get '/profile/:handle' do
   if logged_in?
+    #CR this is current_user
     @user = User.find_by_handle(params[:handle])
+    #CR use AR order method
     @tweets = @user.tweets.sort!{|a,b| b.created_at <=> a.created_at}
     erb :profile
   else
@@ -9,6 +11,7 @@ get '/profile/:handle' do
 end
 
 get '/profile/:handle/followers' do
+  #CR this is current_user
   @user = User.find_by_handle(params[:handle])
   @followers = @user.followers
   erb :followers
@@ -16,6 +19,7 @@ end
 
 get '/profile/:handle/following' do
   @user = current_user
+  #CR you can access current_user from the view - no need to store it in an instance variable
   @following = @user.following
   erb :following
 end

@@ -9,8 +9,8 @@
         <img class="gravatar" src=" <%= user.user_gravitar_url%> " > </img>
       </a>
     </div>
-    
-    
+
+    <!--#CR this logic should be in a helper method - not on the view -->
     <% followings = current_user.following
       f_id = []
      followings.each do |followee|
@@ -18,7 +18,7 @@
       end%>
     <li> Handle: <a href="/profile/<%= user.handle %>"><%= user.handle %></a> </li>
     <li> Fullname: <%= user.name %> </li>
-
+<!-- #CR this logic should be in a helper method, not on the view -->
       <% f_id = current_user.following.map { |followee| followee.id } %>
 
       <% if !(f_id.include?(user.id)) %>
