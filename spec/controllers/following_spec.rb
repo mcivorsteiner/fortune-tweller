@@ -56,7 +56,21 @@ describe "get /following route" do
 
     ## Assert
       expect(last_response.body).to include("#{@user2.handle}")
+  end
 
+  it "check to see that user that is followed is has an additional follower" do
+    User.destroy_all
+    @user1 = User.create(name: "kaelin", handle: "krazykaelin", email: "kaelin@gmail.com", password_hash: "kaelin")
+    @user2 = User.create(name: "anh", handle: "ganhsta", email: "anh@gmail.com", password_hash: "anh")
+    @user1.followers << @user2
+    test_session = { 'rack.session' => { handle: @user1.handle } }
+
+    ## Act
+    get "/profile/#{@user2.handle}/following"
+
+    ## Assert
+    expect(last_response.body).to include("#{@user2.name}")
+    expect(last_response.body).to include("#{@user1.handle}")
   end
 end
 

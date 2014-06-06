@@ -15,7 +15,7 @@ get '/profile/:handle/followers' do
 end
 
 get '/profile/:handle/following' do
-  @user = current_user
+  @user = User.find_by_handle(params[:handle])
   @following = @user.following
   erb :following
 end
@@ -29,7 +29,6 @@ post '/follow/:handle' do
 end
 
 post '/unfollow/:handle' do
-  p params[:handle]
   @user = current_user
   @user_on_page =  User.find_by_handle(params[:handle])
   @user_on_page.followers.delete(@user)
