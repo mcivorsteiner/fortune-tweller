@@ -15,7 +15,7 @@ get '/profile/:handle/followers' do
 end
 
 get '/profile/:handle/following' do
-  @user = current_user
+  @user = User.find_by_handle(params[:handle])
   @following = @user.following
   erb :following
 end
