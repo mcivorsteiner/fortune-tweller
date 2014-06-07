@@ -10,7 +10,7 @@ body {
 
 .container {
   margin: 20px auto;
-  width: 73%;
+  width: 85%;
   padding: 20px;
   border: 1px solid gray;
   border-radius: 1em;
@@ -63,6 +63,7 @@ h3 {
 
 ul {
   list-style: none;
+  padding: 0;
 }
 
 
@@ -129,9 +130,9 @@ PROFILE PAGE
   background-image:url('http://i.imgur.com/5AgKiqb.png');
   background-repeat:no-repeat;
   margin: 0px auto 40px;
-  width: 70%;
+  width: 85%;
   height: 90px;
-  padding: 5px 30px 20px 30px;
+  padding: 5px 10% 20px 5%;
   text-align: center;
   color: black;
 }
