@@ -1,10 +1,15 @@
 # Fortune-Tweller
-### Kaelin, Alistair, Anhkim, Ki
-## MVP User Stories
-- Users can login and/or sign up
-- Users can find other users
-- Users have a profile page
-- Users can post status updates
-- Users can see list of all their own tweets
-- User has and can view followers
-- User has and can view users they are following
+### DESCRIPTION
+A simple Twitter clone with a fortune-cookie twist. This was our Dev Bootcamp Week 4 team project. 
+  
+It uses the Sinatra framework, ActiveRecord and Postgres DB.
+It is responsive, designed mobile-first, and was done without using a css framework.
+
+  
+<a href="http://fortunetweller.herokuapp.com/" target="_blank">fortunetweller.herokuapp.com</a>
+  
+### TEAM MEMBERS
+Kaelin Burns  
+Alistair Hill  
+Anh Kim  
+Ki Steiner  
